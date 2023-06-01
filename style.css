@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.fontoswald {
+  font-family: "Oswald", sans-serif;
+}
+
+.fxcntcnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fxcolcntcnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.padding20 {
+  padding: 20px;
+}
+header {
+  height: 120px;
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+header article:nth-child(1) {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Nabla", cursive;
+}
+header article:nth-child(2) {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.943);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  z-index: 1000;
+}
+.modal p {
+  width: 100%;
+  height: 300px;
+
+  text-align: center;
+}
+.modal h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  font-family: "Nabla", cursive;
+}
+
+/* agregando input usuario - nico */
+
+.input__usuario {
+  height: 40px;
+  width: 300px;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
+
+.input__usuario:focus {
+  font-size: 1.5rem;
+}
+
+.input__usuario:focus::placeholder {
+  color: white;
+}
+
+/* agregando input usuario - nico */
+
+.modalbutton {
+  border: 0;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-weight: 900;
+  border-radius: 10px;
+}
+.btnyellow {
+  cursor: pointer;
+  width: 140px;
+  height: 40px;
+  background-color: rgb(252, 182, 53);
+  color: white;
+  font-family: "Oswald", sans-serif;
+  border: 2px solid rgb(175, 115, 4);
+  border-radius: 5px;
+  filter: brightness(80%);
+  transition: all 1s;
+}
+.btnred {
+  cursor: pointer;
+  width: 140px;
+  height: 40px;
+  background-color: rgb(206, 44, 44);
+  color: white;
+  font-family: "Oswald", sans-serif;
+  border: 2px solid rgb(8, 8, 8);
+  border-radius: 5px;
+  filter: brightness(80%);
+  transition: all 1s;
+}
+.btnyellow:hover {
+  filter: brightness(100%);
+}
+.btnred:hover {
+  filter: brightness(100%);
+}
+
+.btn__fallo {
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  cursor: pointer;
+  width: 50px;
+  height: 30px;
+  background-color: rgba(255, 187, 0, 0.159);
+  padding: 2px;
+  text-align: center;
+  border-radius: 20%;
+}
+
+.container {
+  margin: 10px 0;
+  perspective: 600px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.container2 {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.form__principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 200px;
+}
+
+.treintaCards {
+  margin-right: 10px;
+}
+
+.ul__principal {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.card {
+  width: 120px;
+  height: 180px;
+  border: 1px solid rgb(105, 101, 101);
+  transform: rotateY(180deg);
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  background-image: url("./media/carta\ definitiva.png");
+  background-position: center;
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 35px;
+  /* margin: 5px; */
+  z-index: 100;
+  user-select: none;
+  opacity: 1;
+}
+
+.card2 {
+  width: 60px;
+  height: 90px;
+  border: 1px solid rgb(105, 101, 101);
+  transform: rotateY(180deg);
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  background-image: url("./media/carta\ definitiva.png");
+  background-position: center;
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 35px;
+  /* margin: 5px; */
+  z-index: 100;
+  user-select: none;
+  opacity: 1;
+}
+
+/* desactivo hover para pantallas pequeñas */
+/* .card:hover {
+  transform: scale(1) rotateY(180deg) translateZ(-50px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 75px;
+} */
+.card p {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 30px;
+  filter: grayscale(80%);
+  z-index: -10;
+}
+.front {
+  width: 100%;
+  height: 100%;
+  border: 3px solid orange;
+  position: absolute;
+  backface-visibility: hidden;
+  background-color: rgb(220, 235, 229);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 55px;
+  border-radius: 10px;
+}
+.modalgameover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.897);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Oswald", sans-serif;
+  display: none;
+  z-index: 1000;
+  font-size: 40px;
+}
+
+/* estilos para los li creados de puntuaciones */
+
+.modalgameover fieldset {
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.ul__puntuaciones {
+  list-style: none;
+  height: 80%;
+  width: 95%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.284);
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 0.5rem;
+}
+
+.ul__puntuaciones::-webkit-scrollbar {
+  display: none;
+}
+
+.ul__puntuaciones li {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  justify-items: end;
+  border-radius: 10px;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+}
+
+.ul__puntuaciones li:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.094);
+}
+
+.ul__puntuaciones li:first-child {
+  background-color: rgba(241, 153, 0, 0.301);
+  font-size: 1.2rem;
+}
+
+.ul__puntuaciones li span:first-child {
+  justify-self: start;
+}
+
+.ul__puntuaciones li h6 {
+  justify-self: start;
+  font-size: 1.3rem;
+}
+
+.ul__puntuaciones li.li__partida {
+  background-color: rgba(255, 47, 92, 0.071);
+  border: 1px solid rgba(161, 0, 0, 0.168);
+}
+.ul__puntuaciones li.li__ultima {
+  background-color: rgba(47, 255, 141, 0.38);
+  border: 1px solid rgba(0, 161, 73, 0.266);
+}
+
+/* estilos para los li creados de puntuaciones */
+
+/* tema dark */
+div.tema {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-image: url("./media/waningbibbousmoon-svgrepo-com.svg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+div.modal div.darkTema {
+  background-image: url("./media/waningcrescentmoon-svgrepo-com.svg");
+}
+
+#body.darkTema {
+  background-color: #333533;
+}
+
+#body .modaldark.darkTema {
+  background-color: #333533;
+}
+
+#body .modaldark.darkTema label {
+  color: #cfdbd5;
+}
+
+#body .overdark.darkTema {
+  background-color: #333533;
+}
+
+#body .container .darkTema {
+  background-image: url("./media/carta\ definitiva.png");
+  background-size: cover;
+  border: 3px solid black;
+}
+
+#body .container .darkTema .front {
+  background-color: #646864;
+  border-color: black;
+}
+
+ul.darkTema {
+  background-color: #646864;
+}
+
+.articledark.darkTema {
+  color: #cfdbd5;
+}
+
+.fxcntcnt.darkTema {
+  color: #cfdbd5;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 80px;
+    height: 120px;
+  }
+  header {
+    height: 100px;
+    margin-top: 1.5rem;
+  }
+  header article:nth-child(1) {
+    font-size: 1.2rem;
+  }
+  .modal h1 {
+    font-size: 2rem;
+  }
+  .front {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .card:hover {
+    transform: scale(1) rotateY(180deg) translateZ(-50px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 75px;
+  }
+
+  .card,
+  .card2 {
+    width: 120px;
+    height: 180px;
+  }
+
+  .container2 {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
