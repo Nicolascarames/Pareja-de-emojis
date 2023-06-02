@@ -13,7 +13,7 @@ const localStorageState = window.localStorage.getItem("storage");
 
 const state = {
   usuarios: localStorageState ? JSON.parse(localStorageState).usuarios : [],
-  dark: localStorageState ? JSON.parse(localStorageState).dark : false,
+  dark: localStorageState ? JSON.parse(localStorageState).dark : true,
 };
 
 const ulPuntuacionesElement = document.querySelector(".ul__puntuaciones");
