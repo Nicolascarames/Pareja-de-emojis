@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "4883d77b-eefc-4b62-b7d3-cbe6df2a39f4",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27158140",
+		"_collection_link": "https://lunar-robot-528373.postman.co/workspace/Proyecto-Backend-grupo-e~4641a8eb-7492-4134-aaa1-0ce2112a7121/collection/20562679-4883d77b-eefc-4b62-b7d3-cbe6df2a39f4?action=share&creator=27158140&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "comment",
+							"value": "comentario para ultima prueba 4",
+							"description": "Campo obligatorio",
+							"type": "text"
+						},
+						{
+							"key": "service_id",
+							"value": "5",
+							"description": "Campo obligatorio",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/newcomment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"newcomment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add comment (deploy)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "comment",
+							"value": "texto comentario",
+							"description": "Campo obligatorio",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"description": "Este campo no es obligatorio, quita el check o no selecionar ningun file para no enviar nada. Si hay algun file se comprobará la extensión,\nArchivos permitidos:\njpeg  jpg  png  gif",
+							"type": "file",
+							"src": "/C:/Users/matte/OneDrive/Desktop/portaldenecesidades.png"
+						},
+						{
+							"key": "service_id",
+							"value": "id de el servicio ",
+							"description": "Campo obligatorio",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/newcomment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"newcomment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Service",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "ultima prueba 2",
+							"description": "Campo obligatorio",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "si hoy falla ya no hay nada que hacer ^^",
+							"description": "Campo Obligatorio",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/caspe/Pictures/portaldenecesidades.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/addservice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"addservice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Service (deploy)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "titulo tarea deploy",
+							"description": "Campo obligatorio",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "descripcion tarea deploy",
+							"description": "Campo Obligatorio",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://whatswrong-fbbm.onrender.com/addservice",
+					"protocol": "https",
+					"host": [
+						"whatswrong-fbbm",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"addservice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"TOKEN\", jsonData.data.token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"caramesgarcianico@gmail.com\",\r\n    \"pwd\":\"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login (deploy)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.globals.set(\"TOKEN\", jsonData.data.token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"matteo.stella.web@gmail.com\",\r\n    \"pwd\":\"holamundo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://whatswrong-fbbm.onrender.com/login",
+					"protocol": "https",
+					"host": [
+						"whatswrong-fbbm",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/getUser/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"getUser",
+						"2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"services"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/deleteuser/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"deleteuser",
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modifyPwd",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pwdVieja\":\"1234\",\r\n    \"pwdNueva\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/modifyPwd/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"modifyPwd",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modifyUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "matt",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "ElMatt2",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/matte/OneDrive/Desktop/Me.jpg"
+						},
+						{
+							"key": "biografia",
+							"value": "Holaaa",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/modifyUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"modifyUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"nico\",\n    \"username\":\"navidad\",\n    \"biografia\": \"miembro n5 de este fantastico grupo e\",\n    \"email\": \"caramesgarcianico@gmail.com\",\n    \"pwd\":\"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/newuser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"newuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo usuario (deploy)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"nico2\",\n    \"username\":\"navidad2\",\n    \"biografia\": \"8734736289476qwqffq\",\n    \"email\": \"nico2@correo.com\",\n    \"pwd\":\"holamundo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://whatswrong-fbbm.onrender.com/newuser",
+					"protocol": "https",
+					"host": [
+						"whatswrong-fbbm",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"newuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Services( no login )",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
